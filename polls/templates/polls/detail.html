@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <title>{{question.question_text}}</title>
+  </head>
+  <body>
+
+    <main role="main" class="container">
+
+        <h1 class="mt-5">{{ question.question_text}}</h1>
+
+        <p class="lead">
+        <ul>
+            {% for choice in question.choice_set.all %}
+                <li>{{ choice.choice_text }}</li>
+            {% endfor %}
+            </ul>
+        </p>
+        <a href = "/polls"> Back to Polls</a>
+        
+        </main>
+
+        <footer class="footer">
+            <div class="container">
+                <span class="text-muted">Django Part 3 Tutorial <a class="text-info" href = https://github.com/curtisw27/mysite>Github link</a></span>
+            </div>
+        </footer>
+    </body>
+</html>
