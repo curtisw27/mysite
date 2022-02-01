@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <title>Recent Questions</title>
+  </head>
+  <body>
+
+    <main role="main" class="container">
+        <h1 class="mt-5">5 Most Recent Questions</h1>
+
+        <p class="lead">
+
+        {% if latest_question_list %}
+        <ul>
+        {% for question in latest_question_list %}
+            <li><a href="{% url 'polls:detail' question.id %}">{{ question.question_text }}</a></li>
+        {% endfor %}
+        </ul>
+        </p>
+        
+        {% else %}
+            <p class="text-danger">No polls are available.</p>
+        {% endif %}
+        </main>
+
+
+        <footer class="footer">
+            <div class="container">
+                <span class="text-muted">Django Part 3 Tutorial <a class="text-info" href = https://github.com/curtisw27/mysite>Github link</a></span>
+            </div>
+        </footer>
+    </body>
+</html>
